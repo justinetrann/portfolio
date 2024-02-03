@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+
+html, body {
+  font-family: 'Unica One', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.SimpleSlider {
+  height: 100vh;
+  width: 100vw;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.slick-slider {
+  color: #775F52;
+  background-color: #D9B9AC;
 }
 
-.App-header {
-  background-color: #282c34;
+.slick-slider, .slick-list, .slick-track, .slick-slide > div {
   min-height: 100vh;
+}
+
+.slick-slide h3 {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  font-size: 24px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Styles specific to slider buttons */
+.SimpleSlider .button {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  font-size: 30px; /* Adjust size as needed */
+  color: #FFFFFF; /* Arrow color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  z-index: 100;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.SimpleSlider .button:hover {
+  color: #ddd; /* Color on hover */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Position the "Previous" button on the left */
+.SimpleSlider .button.previous {
+  left: 10px;
+}
+
+/* Position the "Next" button on the right */
+.SimpleSlider .button.next {
+  right: 10px;
+}
+
+.Timeline {
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  /* Add more styling here if needed */
 }
