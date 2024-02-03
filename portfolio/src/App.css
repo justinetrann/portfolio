@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+* {
+  box-sizing: border-box;
+}
 
 html, body {
   font-family: 'Unica One', sans-serif;
@@ -15,6 +18,7 @@ html, body {
 .slick-slider {
   color: #775F52;
   background-color: #D9B9AC;
+  overflow: hidden;
 }
 
 .slick-slider, .slick-list, .slick-track, .slick-slide > div {
@@ -23,9 +27,17 @@ html, body {
 
 .slick-slide h3 {
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 24px;
+  height: 100%;
+  margin: 0;
+}
+
+.slick-slide h3 span {
+  text-align: left;
+  font-size: 30px;
+  padding: 20px;
+  margin: 5px;
+  display: inline-block;
 }
 
 /* Styles specific to slider buttons */

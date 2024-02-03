@@ -30,13 +30,13 @@ export default class SimpleSlider extends Component {
         <div className="SimpleSlider">
           <Slider ref={c => (this.slider = c)} {...settings}>
             <div>
-              <h3>Research</h3>
+              <h3><span>{"C:\\Users\\Justine Tran\\Research>dir"}</span></h3>
             </div>
             <div>
-              <h3>Justine Home</h3>
+              <h3 className="JustineHomeHeader"><span>Justine Home</span></h3>
             </div>
             <div>
-              <h3>Extracurr.</h3>
+              <h3><span>{"C:\\Users\\Justine Tran\\Extracurricular>"}</span></h3>
             </div>
           </Slider>
           <div style={{ textAlign: "center" }}>
