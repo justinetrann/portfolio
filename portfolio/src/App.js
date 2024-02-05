@@ -29,13 +29,13 @@ export default class SimpleSlider extends Component {
       <div>
         <div className="SimpleSlider">
           <Slider ref={c => (this.slider = c)} {...settings}>
-            <div>
+            <div className='ResearchSlide'>
               <h3><span>{"C:\\Users\\Justine Tran\\Research>dir"}</span></h3>
             </div>
-            <div>
-              <h3 className="JustineHomeHeader"><span>Justine Home</span></h3>
+            <div className='HomeSlide'>
+              <h3><span>Justine Home</span></h3>
             </div>
-            <div>
+            <div className='ExtraCurrSlide'>
               <h3><span>{"C:\\Users\\Justine Tran\\Extracurricular>"}</span></h3>
             </div>
           </Slider>
