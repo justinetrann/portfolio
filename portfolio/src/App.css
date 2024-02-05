@@ -53,6 +53,13 @@ html, body {
   z-index: -1; /* Ensure the background is behind other content */
 }
 
+.HomeCircle {
+  position: absolute;
+  right: 30%; /* Align to the right */
+  top: 50%; /* Start at the vertical middle */
+  transform: translateY(-50%); /* Center vertically */
+}
+
 .ResearchSlide{
   height: 100%;
   width: 100%;
