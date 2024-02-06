@@ -224,7 +224,7 @@ html, body {
 
 /*About Me Font*/
 .TimelineAboutMe h3 {
-  font-size: 80px;
+  font-size: 60px;
   font-weight: normal;
   text-align: center;
   margin: 15px 0 0 0;
@@ -239,7 +239,7 @@ html, body {
 
 .Timeline-Links h3 {
   margin: 10px 0 0 0; /* Remove default margin to control spacing precisely */
-  font-size: 45px;
+  font-size: 35px;
   font-weight: normal;
   color: #C5A495;
 }
