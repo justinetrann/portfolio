@@ -14,6 +14,7 @@ export default class SimpleSlider extends Component {
     super(props);
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
+    this.downloadResume = this.downloadResume.bind(this);
   }
   next() {
     this.slider.slickNext();
@@ -21,6 +22,17 @@ export default class SimpleSlider extends Component {
   previous() {
     this.slider.slickPrev();
   }
+
+  downloadResume() {
+    // Function to trigger the resume download
+    const link = document.createElement('a');
+    link.href = 'Tran_Justine_2024.pdf';
+    link.download = 'Tran_Justine_2024.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
   render() {
     const settings = {
       dots: false,
@@ -46,7 +58,7 @@ export default class SimpleSlider extends Component {
                 <img src={HomeCoffee} alt="HomeCoffee"/>
               </div>
               <div className='HomeButton'>
-                <button id="resumeButton" onClick=''>Resume PDF</button>
+                <button id="resumeButton" onClick={this.downloadResume}>Resume PDF</button>
                 <button id="LearnAbtWebsite" onClick=''>Learn About Website</button>
               </div>
               </div>
