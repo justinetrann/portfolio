@@ -299,9 +299,9 @@ html, body {
 /*Research Image*/
 .ResearchSlide .research-img {
   display: flex;
-  justify-content: flex-end; /* Aligns child to the right */
+  justify-content: flex-end;
   margin-right: 9vh;
-  align-items: center; /* Centers child vertically if you need */
+  align-items: center;
 }
 
 .ResearchSlide .research-img img{
@@ -309,6 +309,9 @@ html, body {
 }
 
 @media (max-width: 768px) {
+  .ResearchSlide .research-img {
+    margin-right: 5vh;
+  }
   .ResearchSlide .research-img img{
     width: 30%;
   }
