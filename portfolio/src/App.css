@@ -389,7 +389,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 8vh;
+  margin-top: 5vh;
   height: 100%;
   width: 100%;
 }
@@ -398,7 +398,7 @@ html, body {
   height: 37%;
   width: 37%;
   position: relative;
-  left: -10vh;
+  left: -12vh;
 }
 
 @media (max-width: 768px) {
@@ -415,4 +415,30 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.ExtracurrCoffee{
+  margin-left: 3vh;
+}
+
+.ExtracurrImg{
+  margin-top: 3vh;
+  margin-left: 3vh;
+}
+
+.ExtracurrImg img{
+  width: 18%;
+  height: 18%;
+}
+
+@media (max-width: 768px) {
+  .ExtracurrCoffee, .ExtracurrImg {
+    margin-left: 4vh;
+    margin-top: 3vh;
+  }
+
+  .ExtracurrCoffee img, .ExtracurrImg img{
+    width: 30%;
+    height: 30%;
+  }
 }

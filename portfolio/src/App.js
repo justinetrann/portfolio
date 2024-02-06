@@ -8,6 +8,8 @@ import HomeCircle from './img/Main-Page-Circle.png';
 import HomeCoffee from './img/coffee.png';
 import TimelineCoffee from './img/Timeline-Coffee.jpg';
 import ResearchClock from './img/clockimg.png';
+import ExtracurrImg from './img/extracurr img.png';
+import ExtracurrCoffee from './img/extracurr-coffee.png';
 // import ResearchImage from './img/research-img.png';
 // import CommandPrompt from './img/Main-Page-Command-Prompt.png';
 
@@ -81,6 +83,12 @@ export default class SimpleSlider extends Component {
               </div>
             <div className='ExtraCurrSlide'>
               <h3><span>{"C:\\Users\\Justine Tran\\Extracurricular>"}</span></h3>
+              <div className='ExtracurrCoffee'>
+                <img src={ExtracurrCoffee} alt="ExtracurrCoffee"/>
+              </div>
+              <div className='ExtracurrImg'>
+                <img src={ExtracurrImg} alt="ExtracurrImg"/>
+              </div>
             </div>
           </Slider>
           <div style={{ textAlign: "center" }}>
