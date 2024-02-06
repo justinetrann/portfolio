@@ -187,15 +187,6 @@ html, body {
   }
 }
 
-.ResearchSlide, .ExtraCurrSlide {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
 /*Slide Show Arrows*/
 /* Adjusting button sizes and positions for responsiveness */
 .SimpleSlider .button {
@@ -294,4 +285,39 @@ html, body {
     font-size: 15px;
     margin-left: 9vh;
   }
+}
+
+/*Research Slide*/
+.ResearchSlide {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Research Image*/
+.ResearchSlide .research-img {
+  display: flex;
+  justify-content: flex-end; /* Aligns child to the right */
+  margin-right: 9vh;
+  align-items: center; /* Centers child vertically if you need */
+}
+
+.ResearchSlide .research-img img{
+  width: 23%;
+}
+
+@media (max-width: 768px) {
+  .ResearchSlide .research-img img{
+    width: 30%;
+  }
+}
+
+.ExtraCurrSlide {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
