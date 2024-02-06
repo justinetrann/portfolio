@@ -1,27 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+.stylecmdprompt {
+    background-color: #F6E7E1;
+    padding: 1px 0 0 0;
+    width: 47%;
+    margin-left: 27%;
+    max-height: 600px; /* Increased to provide more space */
+    overflow: hidden;
+}
 
-.cmdPrompt {
+.stylecmdprompt > h3 {
+    margin: 10px 0 6px 10px;
+}
+
+.cmdPromptContainer {
     background-color: #E4CEC1;
     color: #383838;
-    padding: 20px;
+    padding: 10px;
     font-family: 'Unica One', sans-serif;
     line-height: 1.2;
-    width: 46%;
-    min-height: 300px;
-    margin-top: -3px;
-    margin-left: 58vh;
+    min-height: 515px;
+    max-height: 515px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
+}
+
+.cmdPrompt {
+    margin-top: 10px;
 }
 
 .cmdOutput {
     white-space: pre-line;
-    overflow-y: auto;
+    overflow-y: scroll;
+    max-height: 400px; /* Keeps internal scrolling */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.cmdOutput::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 .cmdInput {
     width: 98%;
+    padding: 6px;
     background-color: #E4CEC1;
     color: #383838;
     border: none;
@@ -31,9 +53,11 @@
 }
 
 @media (max-width: 768px) {
-    .cmdPrompt{
-        margin-top: -3px;
-        margin-left: 24vh;
+    .cmdPromptContainer {
+        width: auto;
+        margin-left: 0;
+        padding: 20px;
+        min-height: 354px;
+        max-height: 354px;
     }
-  }
-  
+}

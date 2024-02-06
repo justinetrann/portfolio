@@ -25,20 +25,25 @@ const CommandPrompt = () => {
     };
 
     return (
-        <div className="cmdPrompt">
-            <div className="cmdOutput">
-                {output.map((line, index) => (
-                    <div key={index}>{line}</div>
-                ))}
+        <div className='stylecmdprompt'>
+            <h3 className="centerTitle">Command Prompt</h3>
+            <div className="cmdPromptContainer">
+                <div className="cmdPrompt">
+                    <div className="cmdOutput">
+                        {output.map((line, index) => (
+                            <div key={index}>{line}</div>
+                        ))}
+                    </div>
+                    <input
+                        type="text"
+                        className="cmdInput"
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        onKeyDown={handleKeyDown}
+                        autoFocus
+                    />
+                </div>
             </div>
-            <input
-                type="text"
-                className="cmdInput"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={handleKeyDown}
-                autoFocus
-            />
         </div>
     );
 };
