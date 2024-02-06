@@ -230,3 +230,29 @@ html, body {
   width: 100vw;
   background-color: white;
 }
+
+/*About Me Font*/
+.TimelineAboutMe h3 {
+  font-size: 80px;
+  font-weight: normal;
+  text-align: center;
+  margin: 15px 0 0 0;
+}
+
+.Timeline-Links {
+  display: flex; /* Use flexbox to layout children inline */
+  justify-content: space-around; /* Distribute space evenly around items */
+  align-items: center; /* Align items vertically */
+}
+
+.Timeline-Links h3 {
+  margin: 10px 0 0 0; /* Remove default margin to control spacing precisely */
+  font-size: 45px;
+  font-weight: normal;
+  color: #C5A495;
+}
+
+.Timeline-Links a {
+  color: #C5A495;
+  text-decoration: none; /* Removes underline from links */
+}
