@@ -88,6 +88,9 @@ export default class SimpleSlider extends Component {
           <div className="Timeline-Img">
             <img src={TimelineCoffee} alt="TimelineCoffee"/>
           </div>
+          <div className="Timeline-Project">
+            <h3><span>Projects</span></h3>
+          </div>
         </div>
       </div>
     );

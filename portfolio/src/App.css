@@ -278,4 +278,20 @@ html, body {
 
 .Timeline-Img img{
   width: 90%;
+  height: auto;
+}
+
+/*Project Title*/
+.Timeline-Project{
+  margin-left: 13vh; /* Remove default margin to control spacing precisely */
+  font-size: 20px;
+  font-weight: normal;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .Timeline-Project{
+    font-size: 15px;
+    margin-left: 9vh;
+  }
 }
