@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import './App.css';
 
 import HomeCircle from './img/Main-Page-Circle.png';
+import HomeCoffee from './img/coffee.png';
 // import CommandPrompt from './img/Main-Page-Command-Prompt.png';
 
 
@@ -40,6 +41,9 @@ export default class SimpleSlider extends Component {
               <h3><span>Justine Home</span></h3>
               <div className='HomeCircle'>
                 <img src={HomeCircle} alt="JustineCircle"/>
+              </div>
+              <div className='HomeCoffee'>
+                <img src={HomeCoffee} alt="HomeCoffee"/>
               </div>
             </div>
             <div className='ExtraCurrSlide'>

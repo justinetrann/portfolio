@@ -32,6 +32,7 @@ html, body {
   align-items: center;
 }
 
+/*Home UH Background*/
 .HomeSlide {
   display: flex;
   justify-content: center;
@@ -51,9 +52,10 @@ html, body {
   background-image: url('./img/UH.jpg');
   background-size: cover;
   background-position: center;
-  z-index: -1;
+  z-index: 1;
 }
 
+/*Home Circle Image*/
 .HomeCircle {
   position: absolute;
   right: 28%;
@@ -63,8 +65,8 @@ html, body {
   max-width: 200px;
   min-width: 100px;
   border-radius: 50%;
+  z-index: 2;
 }
-
 
 @media (max-width: 768px) {
   .HomeCircle {
@@ -78,6 +80,24 @@ html, body {
   }
 }
 
+/*Home Cafe Image*/
+.HomeCoffee img {
+  position: absolute;
+  margin-top: -1%;
+  margin-left: 10px;
+  height: 60%;
+  width: auto;
+  left: 0; /* Align the image to the left edge of the container */
+}
+
+@media (max-width: 768px){
+  .HomeCoffee img{
+    width: 30%;
+    height: auto;
+  }
+}
+
+/*Home Font*/
 .slick-slide h3 span {
   margin-right: 20%;
   text-align: left;
@@ -86,6 +106,7 @@ html, body {
   padding-right: 57%;
   margin: 10px;
   margin-top: auto;
+  margin-bottom: 0;
   display: inline-block;
   line-height: 1.2;
   z-index: 1;
@@ -107,7 +128,7 @@ html, body {
   }
 
   .HomeSlide h3 span{
-    padding-right: 45%;
+    padding-right: 42%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -123,6 +144,7 @@ html, body {
   align-items: center;
 }
 
+/*Slide Show Arrows*/
 /* Adjusting button sizes and positions for responsiveness */
 .SimpleSlider .button {
   position: absolute;
@@ -150,6 +172,7 @@ html, body {
   right: 10px;
 }
 
+/*Home Page Project Timeline*/
 .Timeline {
   height: 100vh;
   width: 100vw;
