@@ -1,0 +1,27 @@
+.cmdPrompt {
+    background-color: #F6E7E1;
+    color: white;
+    padding-top: 2px;
+    font-family: monospace;
+    width: 45%; /* Adjusted for width */
+    min-height: 400px; /* This ensures a rectangular shape */
+    margin: auto; /* Center the prompt if desired */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures input is at the bottom */
+}
+
+.cmdOutput {
+    white-space: pre-line;
+    overflow-y: auto;
+}
+
+.cmdInput {
+    height: 100px;
+    width: 100%;
+    background-color: #C5A495;
+    color: white;
+    border: none;
+    font-family: monospace;
+    resize: none;
+}

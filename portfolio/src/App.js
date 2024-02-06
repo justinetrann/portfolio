@@ -4,6 +4,10 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './App.css';
 
+// Self Made Functions
+import CommandPrompt from './cmdPrompt';
+
+// Images
 import HomeCircle from './img/Main-Page-Circle.png';
 import HomeCoffee from './img/coffee.png';
 import TimelineCoffee from './img/Timeline-Coffee.jpg';
@@ -12,7 +16,6 @@ import ExtracurrImg from './img/extracurr img.png';
 import ExtracurrCoffee from './img/extracurr-coffee.png';
 // import ResearchImage from './img/research-img.png';
 // import CommandPrompt from './img/Main-Page-Command-Prompt.png';
-
 
 export default class SimpleSlider extends Component {
   constructor(props) {
@@ -79,6 +82,9 @@ export default class SimpleSlider extends Component {
               <div className='HomeButton'>
                 <button id="resumeButton" onClick={this.downloadResume}>Resume PDF</button>
                 <button id="LearnAbtWebsite" onClick=''>Learn About Website</button>
+              </div>
+              <div className="CommandPrompt">
+                  <CommandPrompt />
               </div>
               </div>
             <div className='ExtraCurrSlide'>
