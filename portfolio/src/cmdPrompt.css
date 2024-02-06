@@ -29,3 +29,11 @@
     line-height: 1.2;
     resize: none;
 }
+
+@media (max-width: 768px) {
+    .cmdPrompt{
+        margin-top: -3px;
+        margin-left: 24vh;
+    }
+  }
+  
