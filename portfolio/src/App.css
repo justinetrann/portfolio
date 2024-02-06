@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -37,7 +38,7 @@ html, body {
   align-items: center;
   height: 100%;
   width: 100%;
-  position: relative; /*positioning of the pseudo-element */
+  position: relative;
 }
 
 .HomeSlide::after {
@@ -46,75 +47,105 @@ html, body {
   right: 0;
   top: 0;
   bottom: 0;
-  width: 40%;
+  width: 30%; /* Adjusted for consistent half overlap */
   background-image: url('./img/UH.jpg');
   background-size: cover;
   background-position: center;
-  z-index: -1; /* Ensure the background is behind other content */
+  z-index: -1;
 }
 
 .HomeCircle {
   position: absolute;
-  right: 30%; /* Align to the right */
-  top: 50%; /* Start at the vertical middle */
-  transform: translateY(-50%); /* Center vertically */
+  right: 28%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15vw; /* Start with a responsive width */
+  max-width: 200px;
+  min-width: 100px;
+  border-radius: 50%;
 }
 
-.ResearchSlide{
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.ExtraCurrSlide{
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@media (max-width: 768px) {
+  .HomeCircle {
+    right: 15%; /* Increase overlap on smaller screens */
+    width: 25vw; /* Increase size to maintain visual balance */
+  }
 
-.slick-slide h3 {
-  display: flex;
-  height: 20%;
-  margin: 0;
+  .HomeCircle img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .slick-slide h3 span {
+  margin-right: 20%;
   text-align: left;
   font-size: 30px;
-  padding: 20px;
-  margin: 5px;
+  padding: 10px;
+  padding-right: 57%;
+  margin: 10px;
+  margin-top: auto;
   display: inline-block;
+  line-height: 1.2;
+  z-index: 1;
 }
 
-/* Styles specific to slider buttons */
+.HomeSlide h3 span{
+  background-color: #C5A495;
+}
+
+/* Ensuring text stays within its box at smaller screen sizes */
+@media (max-width: 768px) {
+  .slick-slide h3 span {
+    font-size: 25px; /* Smaller font size */
+    padding: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 1;
+  }
+
+  .HomeSlide h3 span{
+    padding-right: 45%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 1;
+  }
+}
+
+.ResearchSlide, .ExtraCurrSlide {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Adjusting button sizes and positions for responsiveness */
 .SimpleSlider .button {
   position: absolute;
-  top: 50%; /* Center vertically */
+  top: 50%;
   transform: translateY(-50%);
   background-color: transparent;
   border: none;
-  font-size: 30px; /* Adjust size as needed */
-  color: #FFFFFF; /* Arrow color */
+  font-size: 30px;
+  color: #FFFFFF;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   z-index: 100;
 }
 
 .SimpleSlider .button:hover {
-  color: #ddd; /* Color on hover */
+  color: #ddd;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
-/* Position the "Previous" button on the left */
 .SimpleSlider .button.previous {
   left: 10px;
 }
 
-/* Position the "Next" button on the right */
 .SimpleSlider .button.next {
   right: 10px;
 }

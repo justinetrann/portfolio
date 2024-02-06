@@ -5,6 +5,8 @@ import 'slick-carousel/slick/slick-theme.css';
 import './App.css';
 
 import HomeCircle from './img/Main-Page-Circle.png';
+// import CommandPrompt from './img/Main-Page-Command-Prompt.png';
+
 
 export default class SimpleSlider extends Component {
   constructor(props) {
