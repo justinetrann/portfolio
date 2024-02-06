@@ -7,7 +7,7 @@ import './App.css';
 import HomeCircle from './img/Main-Page-Circle.png';
 import HomeCoffee from './img/coffee.png';
 import TimelineCoffee from './img/Timeline-Coffee.jpg';
-import ResearchImage from './img/research-img.png';
+// import ResearchImage from './img/research-img.png';
 // import CommandPrompt from './img/Main-Page-Command-Prompt.png';
 
 
@@ -50,8 +50,10 @@ export default class SimpleSlider extends Component {
           <Slider ref={c => (this.slider = c)} {...settings}>
             <div className='ResearchSlide'>
               <h3><span>{"C:\\Users\\Justine Tran\\Research>dir"}</span></h3>
-              <div className='research-img'>
-                <img src={ResearchImage} alt="ResearchImage"/>
+              <div className="directory-listing">
+                <span>{"Directory of C:\\Users\\Justine Tran\\RESEARCH>"}</span>
+                <div><span>{"01/12/2023 10:01 AM <FILE>"}</span></div>
+                <div><span>{"06/05/2023 08:02 AM <FILE>"}</span></div>
               </div>
             </div>
             <div className='HomeSlide'>

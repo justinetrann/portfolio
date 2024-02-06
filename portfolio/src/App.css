@@ -297,6 +297,31 @@ html, body {
 }
 
 /*Research Image*/
+/*Home UH Background*/
+.ResearchSlide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.ResearchSlide::after {
+  content: "";
+  position: absolute;
+  right: 10vh;
+  top: 0;
+  bottom: 0;
+  width: 20%; /* Adjusted for consistent half overlap */
+  background-image: url('./img/research-img.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  z-index: 1;
+}
+
+
 .ResearchSlide .research-img {
   display: flex;
   justify-content: flex-end;
@@ -317,6 +342,12 @@ html, body {
   }
 }
 
+.directory-listing {
+  margin-left: 20px;
+  color: #89776E; /* Font color */
+  font-size: 25px; /* Text size */
+}
+
 .ExtraCurrSlide {
   height: 100%;
   width: 100%;
@@ -324,3 +355,4 @@ html, body {
   justify-content: center;
   align-items: center;
 }
+
