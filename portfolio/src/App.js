@@ -52,8 +52,14 @@ export default class SimpleSlider extends Component {
               <h3><span>{"C:\\Users\\Justine Tran\\Research>dir"}</span></h3>
               <div className="directory-listing">
                 <span>{"Directory of C:\\Users\\Justine Tran\\RESEARCH>"}</span>
-                <div><span>{"01/12/2023 10:01 AM <FILE>"}</span></div>
-                <div><span>{"06/05/2023 08:02 AM <FILE>"}</span></div>
+                <div className='researchButton'>
+                  <span>{"01/12/2023 10:01 AM <FILE>"}</span>
+                  <button id="ResearchButton" onClick={this.someFunction}>Evaluation Of HGBP WCET Analysis.txt</button>
+                </div>
+                <div className='researchButton1'>
+                  <span>{"06/05/2023 08:02 AM <FILE>"}</span>
+                  <button id="ResearchButton1" onClick={this.anotherFunction}>Optimizing WCET: ML Branch Prediction.txt</button>
+                </div>
               </div>
             </div>
             <div className='HomeSlide'>

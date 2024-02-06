@@ -321,33 +321,42 @@ html, body {
   z-index: 1;
 }
 
-
-.ResearchSlide .research-img {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 9vh;
-  align-items: center;
-}
-
-.ResearchSlide .research-img img{
-  width: 23%;
-}
-
-@media (max-width: 768px) {
-  .ResearchSlide .research-img {
-    margin-right: 5vh;
-  }
-  .ResearchSlide .research-img img{
-    width: 30%;
-  }
-}
-
 .directory-listing {
   margin-left: 20px;
   color: #89776E; /* Font color */
   font-size: 25px; /* Text size */
 }
 
+/*Research Page: Buttons for FILE*/
+.researchButton, .researchButton1{
+  display: flex; /* Aligns items inline */
+  align-items: center; /* Vertically centers items in the container */
+  position: relative;
+  width: auto; /* Adjust width as needed or keep it flexible */
+  gap: 8px; /* Adjust gap between span and button if needed */
+}
+
+#ResearchButton, #ResearchButton1 {
+  font-family: 'Unica One', sans-serif;
+  line-height: 1.2;
+  background-color: #AB9184;
+  color: #4D3E37;
+  font-weight: bold;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block; /* Allows setting dimensions */
+  font-size: 20px;
+  margin: 4px 2px; /* Adds some space around the button */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#ResearchButton:hover, #ResearchButton1:hover {
+  background-color: #9d8477;
+}
+
+/*ExtraCurricular Slide*/
 .ExtraCurrSlide {
   height: 100%;
   width: 100%;
@@ -355,4 +364,3 @@ html, body {
   justify-content: center;
   align-items: center;
 }
-
