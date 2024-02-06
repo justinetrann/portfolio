@@ -58,7 +58,7 @@ html, body {
 /*Home Circle Image*/
 .HomeCircle {
   position: absolute;
-  right: 28%;
+  right: 30%;
   top: 50%;
   transform: translateY(-50%);
   width: 15vw; /* Start with a responsive width */
