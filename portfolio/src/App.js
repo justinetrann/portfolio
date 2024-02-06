@@ -6,7 +6,7 @@ import './App.css';
 
 import HomeCircle from './img/Main-Page-Circle.png';
 import HomeCoffee from './img/coffee.png';
-import TimelineCoffee from './img/Timeline-Coffee.png';
+import TimelineCoffee from './img/Timeline-Coffee.jpg';
 // import CommandPrompt from './img/Main-Page-Command-Prompt.png';
 
 
@@ -75,7 +75,7 @@ export default class SimpleSlider extends Component {
           </div>
         </div>
         <div className="Timeline">
-          <div style={{ borderTop: '8px solid #D9B9AC', width: '95%', margin: 'auto', marginTop:'40px' }}></div>
+          <div style={{ borderTop: '8px solid #D9B9AC', width: '90%', margin: 'auto', marginTop:'40px' }}></div>
           <div className='TimelineAboutMe'>
             <h3><span>About Me</span></h3>
           </div>

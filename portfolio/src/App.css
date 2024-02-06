@@ -270,14 +270,12 @@ html, body {
 
 /*Timeline Image*/
 .Timeline-Img{
-  display: flex; /* Enables flexbox */
-  justify-content: center; /* Centers children horizontally */
-  align-items: center; /* Centers children vertically */
-  margin: 2vh 1vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3vh;
 }
 
 .Timeline-Img img{
-  width: 50%;
-  height: auto;
-  max-width: 100%; /* Ensures the image is responsive and does not overflow its container */
+  width: 90%;
 }
