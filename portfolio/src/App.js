@@ -6,6 +6,7 @@ import './App.css';
 
 import HomeCircle from './img/Main-Page-Circle.png';
 import HomeCoffee from './img/coffee.png';
+import TimelineCoffee from './img/Timeline-Coffee.png';
 // import CommandPrompt from './img/Main-Page-Command-Prompt.png';
 
 
@@ -83,6 +84,9 @@ export default class SimpleSlider extends Component {
             <h3><a href="https://www.linkedin.com/in/justine-tran/">Linkedin</a></h3>
             <h3><a href="https://docs.google.com/document/d/1rdYaZLt3fdBohS73TBhsXubA2c9VPYtzAWvS9d4hyfM/edit?usp=sharing">Portfolio</a></h3>
             <h3><a href="mailto:justinetran.091@outlook.com">Email</a></h3>
+          </div>
+          <div className="Timeline-Img">
+            <img src={TimelineCoffee} alt="TimelineCoffee"/>
           </div>
         </div>
       </div>

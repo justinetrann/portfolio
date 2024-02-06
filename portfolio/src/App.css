@@ -239,6 +239,7 @@ html, body {
   margin: 15px 0 0 0;
 }
 
+/*Timeline Links Navbar*/
 .Timeline-Links {
   display: flex; /* Use flexbox to layout children inline */
   justify-content: space-around; /* Distribute space evenly around items */
@@ -255,4 +256,28 @@ html, body {
 .Timeline-Links a {
   color: #C5A495;
   text-decoration: none; /* Removes underline from links */
+}
+
+@media (max-width: 768px) {
+  .TimelineAboutMe h3{
+    font-size: 30px;
+  }
+
+  .Timeline-Links h3{
+    font-size: 25px;
+  }
+}
+
+/*Timeline Image*/
+.Timeline-Img{
+  display: flex; /* Enables flexbox */
+  justify-content: center; /* Centers children horizontally */
+  align-items: center; /* Centers children vertically */
+  margin: 2vh 1vh;
+}
+
+.Timeline-Img img{
+  width: 50%;
+  height: auto;
+  max-width: 100%; /* Ensures the image is responsive and does not overflow its container */
 }
