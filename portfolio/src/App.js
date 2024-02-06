@@ -104,11 +104,11 @@ export default class SimpleSlider extends Component {
             <h3><span>About Me</span></h3>
           </div>
           <div className='Timeline-Links'>
-            <h3><a href="https://github.com/justinetrann">Github</a></h3>
-            <h3><a href="https://www.linkedin.com/in/justine-tran/">Linkedin</a></h3>
-            <h3><a href="https://docs.google.com/document/d/1rdYaZLt3fdBohS73TBhsXubA2c9VPYtzAWvS9d4hyfM/edit?usp=sharing">Portfolio</a></h3>
-            <h3><a href="mailto:justinetran.091@outlook.com">Email</a></h3>
-          </div>
+          <h3><a href="https://github.com/justinetrann" target="_blank" rel="noopener noreferrer">Github</a></h3>
+          <h3><a href="https://www.linkedin.com/in/justine-tran/" target="_blank" rel="noopener noreferrer">Linkedin</a></h3>
+          <h3><a href="https://docs.google.com/document/d/1rdYaZLt3fdBohS73TBhsXubA2c9VPYtzAWvS9d4hyfM/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Portfolio</a></h3>
+          <h3><a href="mailto:justinetran.091@outlook.com">Email</a></h3>
+        </div>
           <div className="Timeline-Img">
             <img src={TimelineCoffee} alt="TimelineCoffee"/>
           </div>
