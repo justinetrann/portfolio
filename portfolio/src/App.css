@@ -90,12 +90,22 @@ html, body {
   left: 0; /* Align the image to the left edge of the container */
 }
 
-@media (max-width: 768px){
-  .HomeCoffee img{
+@media (max-width: 768px) {
+  .HomeCoffee img {
     width: 30%;
     height: auto;
   }
+
+  #resumeButton, #LearnAbtWebsite {
+    width: 30%; /* Match the width of .HomeCoffee img */
+    padding: 20px 0; /* Adjust padding to ensure text fits well, you can tweak this */
+    font-size: 16px; /* Optionally adjust the font size for smaller screens */
+    text-align: center; /* Ensure text is centered */
+    display: block; /* Change display to block to stack the buttons */
+    margin: 10px auto; /* Center buttons horizontally and add vertical spacing */
+  }
 }
+
 
 /*Home Font*/
 .slick-slide h3 span {
@@ -142,6 +152,57 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/*Home Button*/
+.HomeButton{
+  position: absolute;
+  top: calc(70% + 10px);
+  left: 10px;
+  width: 30%;
+}
+
+#resumeButton, #LearnAbtWebsite {
+  font-family: 'Unica One', sans-serif;
+  line-height: 1.2;
+  background-color: #C5A495;
+  color: #775F52;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block; /* Allows setting dimensions */
+  font-size: 20px;
+  margin: 4px 2px; /* Adds some space around the button */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#resumeButton{
+  padding: 20px 14vh 15px;
+}
+
+#LearnAbtWebsite {
+  padding: 20px 9vh 15px;
+}
+
+#resumeButton:hover, #LearnAbtWebsite:hover {
+  background-color: #b39585;
+}
+
+@media (max-width: 768px) {
+  /* Ensure buttons container width matches .HomeCoffee img width */
+  .HomeButton {
+    width: 30%;
+    top: calc(54% + 10px);
+  }
+
+  #resumeButton, #LearnAbtWebsite {
+    width: 100%; /* Make buttons fill the container */
+    padding: 20px 0; /* Adjust padding as needed */
+    font-size: 16px;
+    display: block;
+    margin: 10px 0;
+  }
 }
 
 /*Slide Show Arrows*/

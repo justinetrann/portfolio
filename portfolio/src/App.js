@@ -45,14 +45,20 @@ export default class SimpleSlider extends Component {
               <div className='HomeCoffee'>
                 <img src={HomeCoffee} alt="HomeCoffee"/>
               </div>
-            </div>
+              <div className='HomeButton'>
+                <button id="resumeButton" onClick=''>Resume PDF</button>
+                <button id="LearnAbtWebsite" onClick=''>Learn About Website</button>
+              </div>
+              </div>
             <div className='ExtraCurrSlide'>
               <h3><span>{"C:\\Users\\Justine Tran\\Extracurricular>"}</span></h3>
             </div>
           </Slider>
           <div style={{ textAlign: "center" }}>
-          <button className="button previous" onClick={this.previous}><i className="fas fa-chevron-left"></i></button>
-          <button className="button next" onClick={this.next}><i className="fas fa-chevron-right"></i></button>
+          <div className='arrowButton'>
+            <button className="button previous" onClick={this.previous}><i className="fas fa-chevron-left"></i></button>
+            <button className="button next" onClick={this.next}><i className="fas fa-chevron-right"></i></button>
+          </div>
           </div>
         </div>
         <div className="Timeline">
