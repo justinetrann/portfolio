@@ -7,6 +7,7 @@ import './App.css';
 import HomeCircle from './img/Main-Page-Circle.png';
 import HomeCoffee from './img/coffee.png';
 import TimelineCoffee from './img/Timeline-Coffee.jpg';
+import ResearchClock from './img/clockimg.png';
 // import ResearchImage from './img/research-img.png';
 // import CommandPrompt from './img/Main-Page-Command-Prompt.png';
 
@@ -59,6 +60,9 @@ export default class SimpleSlider extends Component {
                 <div className='researchButton1'>
                   <span>{"06/05/2023 08:02 AM <FILE>"}</span>
                   <button id="ResearchButton1" onClick={this.anotherFunction}>Optimizing WCET: ML Branch Prediction.txt</button>
+                </div>
+                <div className='researchclockimg'>
+                  <img src={ResearchClock} alt="ResearchClock"/>
                 </div>
               </div>
             </div>

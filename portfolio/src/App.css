@@ -327,6 +327,14 @@ html, body {
   font-size: 25px; /* Text size */
 }
 
+@media (max-width: 768px) {
+  .directory-listing {
+    margin-left: 20px;
+    font-size: 20px; /* Text size */
+  }
+}
+
+
 /*Research Page: Buttons for FILE*/
 .researchButton, .researchButton1{
   display: flex; /* Aligns items inline */
@@ -354,6 +362,50 @@ html, body {
 
 #ResearchButton:hover, #ResearchButton1:hover {
   background-color: #9d8477;
+}
+
+@media (max-width: 768px) {
+  .researchButton, .researchButton1 {
+    width: 50%;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0;
+    align-items: stretch;
+  }
+
+  #ResearchButton, #ResearchButton1 {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 14px;
+    margin: 4px 0;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.2;
+  }
+}
+
+/*Clock Img*/
+.researchclockimg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8vh;
+  height: 100%;
+  width: 100%;
+}
+
+.researchclockimg img{
+  height: 37%;
+  width: 37%;
+  position: relative;
+  left: -10vh;
+}
+
+@media (max-width: 768px) {
+  .researchclockimg img{
+    height: 50%;
+    width: 50%;
+  }
 }
 
 /*ExtraCurricular Slide*/
