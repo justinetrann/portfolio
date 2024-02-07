@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './cmdPrompt.css';
 
 const CommandPrompt = () => {
     const [input, setInput] = useState('');
     const [output, setOutput] = useState([]);
+
+    useEffect(() => {
+        processCommand('clear');
+        processCommand('cat EducationDetails.txt');
+    }, []);
 
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
