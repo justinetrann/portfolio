@@ -453,11 +453,11 @@ html, body {
 }
 
 @media (max-width: 768px) {
-  .CommandPrompt{
-    position: relative;
-    margin-left: 28vh;
-    margin-top: -2vh;
-    height: 100%;
-    width: 75%;
+  .CommandPrompt {
+    position: absolute;
+    top: 16.5%;
+    left: 15%;
+    transform: translate(0, 0);
+    width: 70%;
   }
 }

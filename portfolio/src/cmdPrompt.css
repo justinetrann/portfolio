@@ -67,9 +67,6 @@
 
 @media (max-width: 768px) {
     .cmdPromptContainer {
-        width: auto;
-        margin-left: 0;
-        padding: 20px;
         min-height: 354px;
         max-height: 354px;
     }
