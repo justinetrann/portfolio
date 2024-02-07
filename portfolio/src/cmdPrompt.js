@@ -8,19 +8,30 @@ const CommandPrompt = () => {
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
             e.preventDefault(); // Prevent form submission
-            const newOutput = processCommand(input);
-            setOutput([...output, `C:\\Users\\Guest> ${input}`, newOutput]);
-            setInput(''); // Clear input
+            processCommand(input);
+            setInput('');
         }
     };
 
     const processCommand = (input) => {
-        // Define command processing logic here
-        switch (input.trim().toLowerCase()) {
+        // Move the logic to handle 'clear' outside to avoid direct state manipulation inside switch
+        if (input.trim().toLowerCase() === 'clear') {
+            setOutput([]);
+        } else {
+            // Define command processing logic here
+            const commandOutput = getCommandOutput(input.trim().toLowerCase());
+            setOutput((prevOutput) => [...prevOutput, `C:\\Users\\Guest> ${input}`, commandOutput]);
+        }
+    };
+
+    const getCommandOutput = (input) => {
+        switch (input) {
             case 'help':
-                return 'Available commands: help, about, reset...';
+                return 'Available commands: help, clear';
+            case '':
+                return '';
             default:
-                return `Unknown command: ${input}`;
+                return `'${input}' is not recognized as an internal or external command.`;
         }
     };
 
@@ -35,7 +46,7 @@ const CommandPrompt = () => {
                         ))}
                     </div>
                     <div className="cmdInputContainer">
-                        <span className="cmdPrefix">C:\Users\kitty&gt;</span>
+                        <span className="cmdPrefix">C:\Users\Guest&gt;</span>
                         <input
                             type="text"
                             className="cmdInput"
