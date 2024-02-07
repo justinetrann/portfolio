@@ -1,33 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback} from 'react';
 import './cmdPrompt.css';
 
 const CommandPrompt = () => {
     const [input, setInput] = useState('');
     const [output, setOutput] = useState([]);
 
-    useEffect(() => {
-        processCommand('clear');
-        processCommand('cat EducationDetails.txt');
-    }, []);
-
-    const handleKeyDown = (e) => {
-        if (e.key === 'Enter') {
-            e.preventDefault(); // Prevent form submission
-            processCommand(input);
-            setInput('');
-        }
-    };
-
-    const processCommand = (input) => {
-        if (input.trim().toLowerCase() === 'clear') {
-            setOutput([]);
-        } else {
-            const commandOutput = getCommandOutput(input.trim().toLowerCase());
-            setOutput((prevOutput) => [...prevOutput, `C:\\Users\\Guest> ${input}`, commandOutput]);
-        }
-    };
-
-    const getCommandOutput = (input) => {
+    const getCommandOutput = useCallback((input) => {
         // Splitting the input to support commands with arguments
         const parts = input.split(' ');
         const command = parts[0];
@@ -79,6 +57,28 @@ const CommandPrompt = () => {
                 return args.join(' ');
             default:
                 return `'${input}' is not recognized as an internal or external command.`;
+        }
+    }, []);
+
+    const processCommand = useCallback((input) => {
+        if (input.trim().toLowerCase() === 'clear') {
+            setOutput([]);
+        } else {
+            const commandOutput = getCommandOutput(input.trim().toLowerCase());
+            setOutput((prevOutput) => [...prevOutput, `C:\\Users\\Guest> ${input}`, commandOutput]);
+        }
+    }, [getCommandOutput]); // Include getCommandOutput here
+
+    useEffect(() => {
+        processCommand('clear');
+        processCommand('cat EducationDetails.txt');
+    }, [processCommand]);
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault(); // Prevent form submission
+            processCommand(input);
+            setInput('');
         }
     };
 
