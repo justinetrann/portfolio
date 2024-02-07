@@ -3,7 +3,7 @@
     padding: 1px 0 0 0;
     width: 47%;
     margin-left: 27%;
-    max-height: 600px; /* Increased to provide more space */
+    max-height: 600px;
     overflow: hidden;
 }
 
@@ -41,6 +41,17 @@
     display: none; /* Chrome, Safari, Opera */
 }
 
+.cmdInputContainer {
+    display: flex;
+    align-items: center;
+}
+
+.cmdPrefix {
+    background-color: #E4CEC1;
+    color: #383838;
+    padding-right: 4px;
+}
+
 .cmdInput {
     width: 98%;
     padding: 6px;
@@ -50,6 +61,7 @@
     font-family: 'Unica One', sans-serif;
     line-height: 1.2;
     resize: none;
+    outline: none;
 }
 
 @media (max-width: 768px) {

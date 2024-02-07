@@ -9,7 +9,7 @@ const CommandPrompt = () => {
         if (e.key === 'Enter') {
             e.preventDefault(); // Prevent form submission
             const newOutput = processCommand(input);
-            setOutput([...output, `> ${input}`, newOutput]);
+            setOutput([...output, `C:\\Users\\Guest> ${input}`, newOutput]);
             setInput(''); // Clear input
         }
     };
@@ -34,14 +34,17 @@ const CommandPrompt = () => {
                             <div key={index}>{line}</div>
                         ))}
                     </div>
-                    <input
-                        type="text"
-                        className="cmdInput"
-                        value={input}
-                        onChange={(e) => setInput(e.target.value)}
-                        onKeyDown={handleKeyDown}
-                        autoFocus
-                    />
+                    <div className="cmdInputContainer">
+                        <span className="cmdPrefix">C:\Users\kitty&gt;</span>
+                        <input
+                            type="text"
+                            className="cmdInput"
+                            value={input}
+                            onChange={(e) => setInput(e.target.value)}
+                            onKeyDown={handleKeyDown}
+                            autoFocus
+                        />
+                    </div>
                 </div>
             </div>
         </div>
