@@ -92,6 +92,7 @@ html, body {
 
 /*Home Button*/
 .HomeButton{
+  z-index: 2;
   position: relative;
   top: calc(58% + 10px);
   left: 10px;
@@ -450,6 +451,7 @@ html, body {
   position: relative;
   left: -12vh;
   top: -19.5vh;
+  z-index: 1;
 }
 
 @media (max-width: 768px) {
