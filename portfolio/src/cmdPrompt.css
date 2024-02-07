@@ -30,7 +30,7 @@
 }
 
 .cmdOutput {
-    white-space: pre-line;
+    white-space: pre-wrap;
     overflow-y: scroll;
     max-height: 400px; /* Keeps internal scrolling */
     -ms-overflow-style: none;  /* IE and Edge */

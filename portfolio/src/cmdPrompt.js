@@ -33,7 +33,20 @@ const CommandPrompt = () => {
 
         switch (command) {
             case 'help':
-                return 'Available commands: help, clear, ls, cd, pwd, mkdir, touch, rm, nano, echo';
+                return 'Available commands: help, clear, ls, cd, pwd, mkdir, touch, rm, nano, echo, cat';
+            case 'cat':
+                if (args[0].toLowerCase() === 'educationdetails.txt') {
+                    return (
+                        <div>
+                            <span style={{paddingLeft: '2em'}}>School: </span><span style={{color: 'red'}}>University of Houston</span><span> | </span><span style={{color: 'red'}}>Fall 2023</span>
+                            <br />
+                            <span style={{paddingLeft: '2em'}}>Degree: </span><span style={{color: 'red'}}>Bachelor</span><span> of Science in </span><span style={{color: 'red'}}>Computer Science</span>
+                            <br />
+                            <span style={{paddingLeft: '2em'}}>Concentration: </span><span style={{color: 'red'}}>Software Design</span>
+                        </div>
+                    );
+                }
+                return `File ${args.join(' ')} not found.`;
             case 'ls':
                 // Simple simulation: return a list of files/directories
                 return fileSystem.join(' ');
@@ -71,7 +84,9 @@ const CommandPrompt = () => {
                 <div className="cmdPrompt">
                     <div className="cmdOutput">
                         {output.map((line, index) => (
-                            <div key={index}>{line}</div>
+                            <div key={index}>
+                                {typeof line === 'string' ? line : line}
+                            </div>
                         ))}
                     </div>
                     <div className="cmdInputContainer">
