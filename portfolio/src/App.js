@@ -7,7 +7,6 @@ import './App.css';
 // Self Made Functions
 import CommandPrompt from './components/cmdPrompt/cmdPrompt';
 import CreateAreaSN from './components/stickyNotes/createArea';
-import StickyNote from './components/stickyNotes/stickyNote';
 
 // Images
 import HomeCircle from './img/Main-Page-Circle.png';
@@ -67,7 +66,6 @@ export default class SimpleSlider extends Component {
   }
 
   render() {
-    const { notes } = this.state;
     const settings = {
       dots: false,
       infinite: true,
@@ -150,9 +148,6 @@ export default class SimpleSlider extends Component {
         </div>
         <div className="stickyNote">
           <CreateAreaSN onClick={this.addNote} />
-          {notes.map(note => (
-            <StickyNote key={note.id} id={note.id} onDelete={this.deleteNote} />
-          ))}
         </div>
       </div>
     );
