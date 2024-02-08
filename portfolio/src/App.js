@@ -5,7 +5,9 @@ import 'slick-carousel/slick/slick-theme.css';
 import './App.css';
 
 // Self Made Functions
-import CommandPrompt from './cmdPrompt';
+import CommandPrompt from './components/cmdPrompt/cmdPrompt';
+import CreateAreaSN from './components/stickyNotes/createArea';
+import StickyNote from './components/stickyNotes/stickyNote';
 
 // Images
 import HomeCircle from './img/Main-Page-Circle.png';
@@ -20,19 +22,27 @@ import ExtracurrCoffee from './img/extracurr-coffee.png';
 export default class SimpleSlider extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      notes: [],
+    };
+
+    // Binding methods
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
     this.downloadResume = this.downloadResume.bind(this);
+    this.addNote = this.addNote.bind(this);
+    this.deleteNote = this.deleteNote.bind(this);
   }
+
   next() {
     this.slider.slickNext();
   }
+
   previous() {
     this.slider.slickPrev();
   }
 
   downloadResume() {
-    // Function to trigger the resume download
     const link = document.createElement('a');
     link.href = 'Tran_Justine_2024.pdf';
     link.download = 'Tran_Justine_2024.pdf';
@@ -41,7 +51,23 @@ export default class SimpleSlider extends Component {
     document.body.removeChild(link);
   }
 
+  addNote() {
+    const newNote = {
+      id: Math.random(), // Simple ID generation for example purposes
+    };
+    this.setState(prevState => ({
+      notes: [...prevState.notes, newNote],
+    }));
+  }
+
+  deleteNote(id) {
+    this.setState(prevState => ({
+      notes: prevState.notes.filter(note => note.id !== id),
+    }));
+  }
+
   render() {
+    const { notes } = this.state;
     const settings = {
       dots: false,
       infinite: true,
@@ -121,6 +147,12 @@ export default class SimpleSlider extends Component {
           <div className="Timeline-Project">
             <h3><span>Projects</span></h3>
           </div>
+        </div>
+        <div className="stickyNote">
+          <CreateAreaSN onClick={this.addNote} />
+          {notes.map(note => (
+            <StickyNote key={note.id} id={note.id} onDelete={this.deleteNote} />
+          ))}
         </div>
       </div>
     );
