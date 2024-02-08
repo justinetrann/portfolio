@@ -13,6 +13,19 @@
     cursor: pointer;
   }
   
+.tooltip {
+    position: absolute;
+    top: -30px; /* Adjust based on your layout */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #984c04;
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
 .icon-container .notebook-icon img{
     width: 30px;
     height: 30px;
