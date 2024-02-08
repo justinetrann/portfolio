@@ -15,7 +15,7 @@ function Note(props) {
 
    if (isMinimized) {
       return (
-         <div className="note minimized" onClick={toggleMinimize}>
+         <div className="noteMinimized" onClick={toggleMinimize}>
             <img src={noteBook} alt="NoteBook Icon" style={{ width: '100px', cursor: 'pointer' }}/>
          </div>
       );
