@@ -39,7 +39,7 @@
     padding: 10px;
     width: 240px;
     margin: 16px;
-    float: left;
+    float: center;
 }
 
 .note h1 {
@@ -71,7 +71,7 @@
 form {
     position: relative;
     width: 480px;
-    margin: 30px auto 20px auto;
+    margin: -50% auto 20px auto;
     background: #fff;
     padding: 15px;
     border-radius: 7px;

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import Draggable from 'react-draggable';
 import './createArea.css';
+
 import noteBook from './img/note.png';
 
 function Note(props) {
@@ -108,14 +110,17 @@ const CreateArea = ({ onAdd }) => {
                <button type="submit">Add</button>
             </form>
          )}
-         {notes.map(note => (
-            <Note
-               key={note.id}
-               id={note.id}
-               title={note.title}
-               content={note.content}
-               onDelete={deleteNote}
-            />
+         {notes.map((note, index) => (
+            <Draggable key={note.id}>
+               <div>
+                  <Note
+                  id={note.id}
+                  title={note.title}
+                  content={note.content}
+                  onDelete={deleteNote}
+                  />
+               </div>
+            </Draggable>
          ))}
       </div>
    );
