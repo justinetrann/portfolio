@@ -7,8 +7,8 @@ const CreateArea = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleClick = () => {
-    const username = prompt("Please enter your username:");
-    const password = prompt("Please enter your password:");
+    const username = prompt("Please Admin username:");
+    const password = prompt("Please Admin password:");
     if (username === "admin" && password === "makeanote") {
       // Logic to add a note or navigate to note adding area
       alert("Access granted. You can now add a note.");
