@@ -15,8 +15,6 @@ import TimelineCoffee from './img/Timeline-Coffee.jpg';
 import ResearchClock from './img/clockimg.png';
 import ExtracurrImg from './img/extracurr img.png';
 import ExtracurrCoffee from './img/extracurr-coffee.png';
-// import ResearchImage from './img/research-img.png';
-// import CommandPrompt from './img/Main-Page-Command-Prompt.png';
 
 export default class SimpleSlider extends Component {
   constructor(props) {
