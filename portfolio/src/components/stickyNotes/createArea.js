@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './createArea.css';
 
 import noteBook from './img/note.png';
+import noteBook1 from './img/note-1.png';
 
 function Note({ id, title, content, x, y, isMinimized, onDelete, onMinimizeChange }) {
     const toggleMinimize = () => {
@@ -11,7 +12,7 @@ function Note({ id, title, content, x, y, isMinimized, onDelete, onMinimizeChang
     if (isMinimized) {
         return (
             <div className="noteMinimized" onClick={toggleMinimize} style={{ position: 'absolute', top: y, left: x }}>
-                <img src={noteBook} alt="NoteBook Icon" style={{ width: '100px', cursor: 'pointer' }}/>
+                <img src={noteBook1} alt="NoteBook Icon" style={{ width: '100px', cursor: 'pointer' }}/>
             </div>
         );
     }

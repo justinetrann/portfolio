@@ -105,8 +105,7 @@ form button {
     outline: none;
 }
 
-.noteMinimized img{
-    padding: 35px;
-    width: 3%;
-    height: 3%;    
+.noteMinimized img {
+    width: 120%;
+    height: 120%;
 }
