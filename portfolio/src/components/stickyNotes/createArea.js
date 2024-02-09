@@ -32,7 +32,7 @@ function Note(props) {
    );
 }
 
-const CreateArea = ({ onAdd }) => {
+const CreateArea = (props) => {
    const [showForm, setShowForm] = useState(false);
    const [notes, setNotes] = useState([]);
    const [note, setNote] = useState({
@@ -90,7 +90,8 @@ const CreateArea = ({ onAdd }) => {
 
    const submitNote = (event) => {
       if (note.title || note.content) {
-         setNotes(prevNotes => [...prevNotes, { ...note, id: Date.now() }]);
+         // Fix 2: Access currentSlide from props
+         setNotes(prevNotes => [...prevNotes, { ...note, id: Date.now(), slideIndex: props.currentSlide }]);
          setNote({
             title: "",
             content: "",
@@ -98,13 +99,12 @@ const CreateArea = ({ onAdd }) => {
             y: 0
          });
          setShowForm(false);
-         // Listen for the next click to place the note
-         document.addEventListener('click', placeNote, {once: true});
+         document.addEventListener('click', (e) => placeNote(e, props.currentSlide), {once: true}); // Modified to pass currentSlide
       }
       event.preventDefault();
    };
 
-   const placeNote = (e) => {
+   const placeNote = (e, currentSlide) => {
       setNotes(prevNotes => {
          const lastNote = prevNotes[prevNotes.length - 1];
          return [
@@ -112,7 +112,8 @@ const CreateArea = ({ onAdd }) => {
             {
                ...lastNote,
                x: e.clientX,
-               y: e.clientY
+               y: e.clientY,
+               slideIndex: currentSlide // Ensure currentSlide is set here
             }
          ];
       });
@@ -147,16 +148,16 @@ const CreateArea = ({ onAdd }) => {
                <button type="submit">Add</button>
             </form>
          )}
-         {notes.map((note) => (
-            <Note
-               key={note.id}
-               id={note.id}
-               title={note.title}
-               content={note.content}
-               x={note.x}
-               y={note.y}
-               onDelete={deleteNote}
-            />
+         {notes.filter(note => note.slideIndex === props.currentSlide).map((note) => (
+         <Note
+            key={note.id}
+            id={note.id}
+            title={note.title}
+            content={note.content}
+            x={note.x}
+            y={note.y}
+            onDelete={deleteNote}
+         />
          ))}
       </div>
    );

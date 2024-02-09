@@ -21,6 +21,7 @@ export default class SimpleSlider extends Component {
     super(props);
     this.state = {
       notes: [],
+      currentSlide: 0,
     };
 
     // Binding methods
@@ -71,6 +72,7 @@ export default class SimpleSlider extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       initialSlide: 1,
+      afterChange: current => this.setState({ currentSlide: current }), // Update current slide index
     };
     return (
       <div>
@@ -145,7 +147,7 @@ export default class SimpleSlider extends Component {
           </div>
         </div>
         <div className="stickyNote">
-          <CreateAreaSN onClick={this.addNote} />
+          <CreateAreaSN currentSlide={this.state.currentSlide} onAdd={this.addNote} />
         </div>
       </div>
     );
