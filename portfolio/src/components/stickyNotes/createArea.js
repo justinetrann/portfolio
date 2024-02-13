@@ -31,6 +31,7 @@ const CreateArea = (props) => {
     const [showForm, setShowForm] = useState(false);
     const [notes, setNotes] = useState([]);
     const [note, setNote] = useState({ title: "", content: "", x: 0, y: 0 });
+    const [isHovered, setIsHovered] = useState(false);
 
     useEffect(() => {
         if (showForm) {
@@ -98,7 +99,11 @@ const CreateArea = (props) => {
 
     return (
         <div>
-            <div className="icon-container" onClick={handleClick}>
+            <div className="icon-container"
+                onClick={handleClick}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}>
+                {isHovered && <div className="tooltip">Add a note</div>}
                 <div className="notebook-icon">
                     <img src={noteBook} alt="NoteBook Icon"/>
                 </div>

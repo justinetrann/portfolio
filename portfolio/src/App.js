@@ -7,6 +7,7 @@ import './App.css';
 // Self Made Functions
 import CommandPrompt from './components/cmdPrompt/cmdPrompt';
 import CreateAreaSN from './components/stickyNotes/createArea';
+import AutoProjectTimeLine from './components/autoProjectTimeline/autoProjectTimeline';
 
 // Images
 import HomeCircle from './img/Main-Page-Circle.png';
@@ -146,8 +147,13 @@ export default class SimpleSlider extends Component {
             <h3><span>Projects</span></h3>
           </div>
         </div>
-        <div className="stickyNote">
-          <CreateAreaSN currentSlide={this.state.currentSlide} onAdd={this.addNote} />
+        <div className='container-icon'>
+          <div className="stickyNote">
+            <CreateAreaSN currentSlide={this.state.currentSlide} onAdd={this.addNote} />
+          </div>
+          <div className='timeline'>
+            <AutoProjectTimeLine/>
+          </div>
         </div>
       </div>
     );
