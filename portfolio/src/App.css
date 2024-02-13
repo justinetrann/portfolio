@@ -478,3 +478,8 @@ html, body {
   flex: 1;
   margin: 0 10px;
 }
+
+.timeline{
+  margin-top: -15%;
+  margin-bottom: 10%;
+}

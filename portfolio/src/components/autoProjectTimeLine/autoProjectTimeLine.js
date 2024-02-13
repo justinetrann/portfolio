@@ -5,9 +5,9 @@ import timeline from './img/timeline.png';
 function AutoProjectTimeLine() {
   const [showForm, setShowForm] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const [project, setProject] = useState({ title: '', content: '' });
+  const [project, setProject] = useState({ title: '', content: '', URL: '' });
+  const [projects, setProjects] = useState([]);
 
-  // Toggles the form display
   const toggleForm = () => setShowForm(!showForm);
 
   const handleChange = (event) => {
@@ -18,21 +18,19 @@ function AutoProjectTimeLine() {
     }));
   };
 
-  // Handles form submission
   const submitNote = (event) => {
     event.preventDefault();
-    console.log('Project Added:', project);
-    // Add project submission logic here
-    setProject({ title: '', content: '' }); // Reset project state
-    setShowForm(false); // Optionally hide form after submission
+    setProjects([...projects, project]);
+    setProject({ title: '', content: '', URL: '' }); // Reset form
+    setShowForm(false); // Hide form
   };
 
   return (
     <div>
       <div className="icon-timeline-container"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          onClick={toggleForm}> {/* Added toggleForm on click */}
+           onMouseEnter={() => setIsHovered(true)}
+           onMouseLeave={() => setIsHovered(false)}
+           onClick={toggleForm}>
         {isHovered && <div className="tooltip">Add Project Timeline</div>}
         <div className="timeline-icon">
           <img src={timeline} alt="Timeline Icon"/>
@@ -41,10 +39,19 @@ function AutoProjectTimeLine() {
       {showForm && (
         <form onSubmit={submitNote}>
           <input name="title" onChange={handleChange} value={project.title} placeholder="Project Title" />
-          <textarea name="content" onChange={handleChange} value={project.content} placeholder="Project's URL here" rows="2" />
+          <textarea name="content" onChange={handleChange} value={project.content} placeholder="Describe Your Project Here (max 500 characters)" rows="3" maxLength="500"/>
+          <textarea name="URL" onChange={handleChange} value={project.URL} placeholder="Paste Project URL Here" rows="1" />
           <button type="submit">Add Project</button>
         </form>
       )}
+      {projects.map((project, index) => (
+        <div key={index} className="project-timeline">
+          <div className="timeline-vertical"></div>
+          <div className="timeline-horizontal">
+            <span>{project.title}: {project.content} - {project.URL}</span>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
