@@ -89,7 +89,7 @@ form button {
 
 .project-timeline {
    position: relative;
-   height: 5cm;
+   height: 2cm;
    width: 100%;
    display: flex;
    align-items: center;
@@ -102,8 +102,9 @@ form button {
    height: 100%;
    position: absolute;
    transform: translateX(-50%);
+   overflow: hidden;
  }
- 
+
  .timeline-horizontal-left{
    background-color: #AB9184;
    width: 20%;
