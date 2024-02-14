@@ -47,7 +47,7 @@ function AutoProjectTimeLine() {
       {projects.map((project, index) => (
         <div key={index} className="project-timeline">
           <div className="timeline-vertical"></div>
-          <div className="timeline-horizontal">
+          <div className={index % 2 === 0 ? "timeline-horizontal-left" : "timeline-horizontal-right"}>
             <span>{project.title}: {project.content} - {project.URL}</span>
           </div>
         </div>
