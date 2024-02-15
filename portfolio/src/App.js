@@ -8,6 +8,7 @@ import './App.css';
 import CommandPrompt from './components/cmdPrompt/cmdPrompt';
 import CreateAreaSN from './components/stickyNotes/createArea';
 import AutoProjectTimeLine from './components/autoProjectTimeline/autoProjectTimeline';
+import ExtraCurr from './components/extracurr/extracurr';
 
 // Images
 import HomeCircle from './img/Main-Page-Circle.png';
@@ -119,6 +120,9 @@ export default class SimpleSlider extends Component {
               </div>
               <div className='ExtracurrImg'>
                 <img src={ExtracurrImg} alt="ExtracurrImg"/>
+              </div>
+              <div className='powerpoint'>
+                <ExtraCurr/>
               </div>
             </div>
           </Slider>
