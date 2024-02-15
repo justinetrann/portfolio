@@ -66,7 +66,7 @@ const CreateArea = (props) => {
             alert("Access denied. Incorrect username or password.");
         }
     };
-
+    
     const handleChange = (event) => {
         const { name, value } = event.target;
         setNote(prevNote => ({ ...prevNote, [name]: value }));

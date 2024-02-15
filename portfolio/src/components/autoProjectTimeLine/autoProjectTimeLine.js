@@ -10,8 +10,6 @@ function AutoProjectTimeLine() {
   const [project, setProject] = useState({ title: '', content: '', URL: '', date: '' });
   const [projects, setProjects] = useState([]);
 
-  const toggleForm = () => setShowForm(!showForm);
-
   const handleChange = (event) => {
     const { name, value } = event.target;
     setProject((prevProject) => ({
@@ -28,12 +26,22 @@ function AutoProjectTimeLine() {
     setShowForm(false);
   };
 
+  const handleClick = () => {
+    const username = prompt("Please enter Admin username:");
+    const password = prompt("Please enter Admin password:");
+    if (username === "admin" && password === "makeproject") {
+      setShowForm(true);
+    } else {
+      alert("Access denied. Incorrect username or password.");
+    }
+  };
+
   return (
     <div>
       <div className="icon-timeline-container"
            onMouseEnter={() => setIsHovered(true)}
            onMouseLeave={() => setIsHovered(false)}
-           onClick={toggleForm}>
+           onClick={handleClick}>
         {isHovered && <div className="tooltip">Add Project Timeline</div>}
         <div className="timeline-icon">
           <img src={timeline} alt="Timeline Icon"/>
