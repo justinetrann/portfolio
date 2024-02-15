@@ -483,3 +483,20 @@ html, body {
   margin-top: -15%;
   margin-bottom: 10%;
 }
+
+.iframePresentation {
+  width: 100%;
+  height: 580px;
+  position: absolute;
+  bottom: -120%;
+  margin-left: -10%;
+}
+
+@media (max-width: 768px) {
+  .iframePresentation {
+    width: 80%;
+    height: 450px;
+    margin-left: 5%;
+    margin-bottom: 5%;
+  }
+}
