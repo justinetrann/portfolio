@@ -40,12 +40,16 @@ function AutoProjectTimeLine() {
         </div>
       </div>
       {showForm && (
-        <form onSubmit={submitNote}>
-          <input name="title" onChange={handleChange} value={project.title} placeholder="Project Title" />
-          <textarea name="content" onChange={handleChange} value={project.content} placeholder="Describe Your Project Here (max 500 characters)" rows="3" maxLength="500"/>
-          <textarea name="URL" onChange={handleChange} value={project.URL} placeholder="Paste Project URL Here" rows="1" />
-          <button type="submit">Add Project</button>
-        </form>
+        <div className="form-overlay">
+          <div className="form-container">
+            <form onSubmit={submitNote}>
+              <input name="title" onChange={handleChange} value={project.title} placeholder="Project Title" />
+              <textarea name="content" onChange={handleChange} value={project.content} placeholder="Describe Your Project Here (max 500 characters)" rows="3" maxLength="500"/>
+              <textarea name="URL" onChange={handleChange} value={project.URL} placeholder="Paste Project URL Here" rows="1" />
+              <button type="submit">Add Project</button>
+            </form>
+          </div>
+        </div>
       )}
       {projects.map((project, index) => (
         <div key={index} className="project-timeline">

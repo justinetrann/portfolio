@@ -54,12 +54,25 @@ body {
 form {
    position: relative;
    width: 480px;
-   margin: -40% auto auto -250px;
+   margin: -20% auto auto -30px;
    background: #fff;
    padding: 15px;
    border-radius: 7px;
    box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
+
+.form-overlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: rgba(0, 0, 0, 0.5);
+   z-index: 10;
+ }
 
 form input, form textarea {
    width: 100%;
