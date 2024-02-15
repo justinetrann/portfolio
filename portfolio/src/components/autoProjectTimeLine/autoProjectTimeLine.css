@@ -176,3 +176,11 @@ form button {
  .timeline-horizontal-right .project-date-right {
    left: 30px;
  }
+
+ .project-date-left, .project-date-right {
+   color: #C5A495;
+ }
+
+ .project-timeline{
+   color: #966262;
+ }
