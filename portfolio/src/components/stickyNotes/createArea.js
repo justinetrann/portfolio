@@ -109,11 +109,15 @@ const CreateArea = (props) => {
                 </div>
             </div>
             {showForm && (
-                <form onSubmit={submitNote}>
-                    <input name="title" onChange={handleChange} value={note.title} placeholder="Title" />
-                    <textarea name="content" onChange={handleChange} value={note.content} placeholder="Take a note..." rows="3" />
-                    <button type="submit">Add</button>
-                </form>
+                <div className="form-overlay">
+                    <div className="form-container">
+                        <form onSubmit={submitNote}>
+                            <input name="title" onChange={handleChange} value={note.title} placeholder="Title" />
+                            <textarea name="content" onChange={handleChange} value={note.content} placeholder="Take a note..." rows="3" />
+                            <button type="submit">Add</button>
+                        </form>
+                    </div>
+                </div>
             )}
             {notes.filter(note => note.slideIndex === props.currentSlide).map((note) => (
                 <Note
