@@ -90,8 +90,7 @@ form {
     align-items: center;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 10;
-  }
- 
+  } 
 
 form input, form textarea {
     width: 100%;

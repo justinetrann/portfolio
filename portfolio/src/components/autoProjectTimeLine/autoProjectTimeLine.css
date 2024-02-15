@@ -158,3 +158,21 @@ form button {
   border-radius: 5px;
   white-space: nowrap;
 }
+
+.timeline-horizontal-left .project-date-left, .timeline-horizontal-right .project-date-right {
+   position: absolute;
+   top: -22px;
+   transform: translateY(-100%);
+   white-space: nowrap;
+   background-color: #fff;
+   padding: 2px 6px;
+   border-radius: 5px;
+ }
+ 
+ .timeline-horizontal-left .project-date-left {
+   right: 30px;
+ }
+ 
+ .timeline-horizontal-right .project-date-right {
+   left: 30px;
+ }
