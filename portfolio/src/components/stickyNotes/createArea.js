@@ -72,12 +72,17 @@ const CreateArea = (props) => {
         setNote(prevNote => ({ ...prevNote, [name]: value }));
     };
 
-    const submitNote = (event) => {
+    const submitNote = (event, isGlobal = false) => {
         if (note.title || note.content) {
-            setNotes(prevNotes => [...prevNotes, { ...note, id: Date.now(), slideIndex: props.currentSlide, isMinimized: false }]);
-            setNote({ title: "", content: "", x: 0, y: 0 });
+            const newNote = { ...note, id: Date.now(), isMinimized: false, global: isGlobal };
+            setNotes(prevNotes => [...prevNotes, newNote]);
+            setNote({ title: "", content: "", x: 0, y: 0, global: false }); // Reset note state
             setShowForm(false);
-            document.addEventListener('click', (e) => placeNote(e, props.currentSlide), { once: true });
+            if (isGlobal) {
+                document.addEventListener('click', (e) => placeNoteGlobally(e, newNote.id), { once: true });
+            } else {
+                document.addEventListener('click', (e) => placeNote(e, props.currentSlide), { once: true });
+            }
         }
         event.preventDefault();
     };
@@ -87,6 +92,10 @@ const CreateArea = (props) => {
             const lastNote = prevNotes[prevNotes.length - 1];
             return [...prevNotes.slice(0, -1), { ...lastNote, x: e.clientX, y: e.clientY, slideIndex: currentSlide }];
         });
+    };
+
+    const placeNoteGlobally = (e, id) => {
+        setNotes(prevNotes => prevNotes.map(note => note.id === id ? { ...note, x: e.clientX, y: e.clientY } : note));
     };
 
     const deleteNote = (id) => {
@@ -111,15 +120,16 @@ const CreateArea = (props) => {
             {showForm && (
                 <div className="form-overlay">
                     <div className="form-container">
-                        <form onSubmit={submitNote}>
+                        <form onSubmit={(e) => submitNote(e, false)}>
                             <input name="title" onChange={handleChange} value={note.title} placeholder="Title" />
                             <textarea name="content" onChange={handleChange} value={note.content} placeholder="Take a note..." rows="3" />
-                            <button type="submit">Add</button>
+                            <button type="submit" style={{ marginRight: '15%' }}>Add to Slide</button>
+                            <button type="button" onClick={(e) => submitNote(e, true)}>Add Globally</button>
                         </form>
                     </div>
                 </div>
             )}
-            {notes.filter(note => note.slideIndex === props.currentSlide).map((note) => (
+            {notes.filter(note => note.global || note.slideIndex === props.currentSlide).map((note) => (
                 <Note
                     key={note.id}
                     id={note.id}

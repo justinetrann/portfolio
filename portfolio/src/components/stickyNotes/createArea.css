@@ -106,13 +106,13 @@ form button {
     font-family: 'Unica One', sans-serif;
     position: absolute;
     right: 18px;
-    bottom: -10px;
+    bottom: -15px;
     background: #ab9184;
     color: #3d3531;
     border: none;
     border-radius: 20%;
     width: 70px;
-    height: 30px;
+    height: 40px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     outline: none;
