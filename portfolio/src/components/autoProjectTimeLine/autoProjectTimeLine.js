@@ -104,7 +104,7 @@ function AutoProjectTimeLine() {
             <span>{project.title}: <div style={{ color: '#966262', marginTop: '5px' }}> {project.content} </div></span>
             <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
               {project.languages.map((language, langIndex) => (
-                <div key={langIndex} style={{ backgroundColor: '#C5A495', color: 'black', borderRadius: '10%', padding: '5px 10px', margin: '5px', fontSize: '12px' }}>
+                <div key={langIndex} style={{ backgroundColor: '#C5A495', color: 'black', borderRadius: '10%', padding: '5px 10px', margin: '5px', fontSize: '10px' }}>
                   {language}
                 </div>
               ))}
