@@ -185,6 +185,7 @@ form button {
 }
 
 .timeline-horizontal-left .project-date-left, .timeline-horizontal-right .project-date-right {
+  font-size: small;
    position: absolute;
    top: -22px;
    transform: translateY(-100%);
