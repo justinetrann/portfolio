@@ -142,6 +142,16 @@ form button {
   text-align: left;
 }
 
+@media (max-width: 768px) {
+  .timeline-horizontal-left span {
+    top: 500%;
+    right: 50%;
+    max-width: 300px;
+    min-width: 250px;
+    font-size: small;
+  }
+}
+
 .timeline-horizontal-right {
   background-color: #AB9184;
   width: 20%;
@@ -165,6 +175,15 @@ form button {
   text-align: left;
 }
 
+@media (max-width: 768px) {
+  .timeline-horizontal-right span {
+    top: 300%;
+    max-width: 300px;
+    min-width: 300px;
+    font-size: small;
+  }
+}
+
 .timeline-horizontal-left .project-date-left, .timeline-horizontal-right .project-date-right {
    position: absolute;
    top: -22px;
@@ -179,6 +198,12 @@ form button {
    right: -80%;
  }
  
+ @media (max-width: 768px) {
+  .timeline-horizontal-left .project-date-left {
+    right: -130%;
+  }
+}
+
  .timeline-horizontal-right .project-date-right {
    left: 10px;
  }
