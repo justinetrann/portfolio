@@ -99,7 +99,7 @@ function AutoProjectTimeLine() {
                 <span className="project-date-right">{project.startDate} - {project.endDate}</span>
               </>
             )}
-            <span>{project.title} : {project.content} </span>
+            <span>{project.title}: <div style={{ color: '#966262', marginTop: '5px' }}> {project.content} </div></span>
             <a href={project.URL} target="_blank" rel="noopener noreferrer" className="about-project-button">About Project</a>
           </div>
         </div>

@@ -138,7 +138,7 @@ form button {
   white-space: normal;
   margin-right: 10px;
   max-width: 300px;
-  min-width: 400px;
+  min-width: 300px;
   text-align: left;
 }
 
@@ -161,7 +161,7 @@ form button {
   white-space: normal;
   margin-right: 10px;
   max-width: 300px;
-  min-width: 400px;
+  min-width: 300px;
   text-align: left;
 }
 
@@ -176,7 +176,7 @@ form button {
  }
  
  .timeline-horizontal-left .project-date-left {
-   right: -150%;
+   right: -80%;
  }
  
  .timeline-horizontal-right .project-date-right {
@@ -188,7 +188,7 @@ form button {
  }
 
  .project-timeline{
-   color: #966262;
+   color: black;
  }
 
  .about-project-button {
