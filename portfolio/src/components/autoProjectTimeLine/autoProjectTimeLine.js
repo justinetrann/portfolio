@@ -1,14 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './autoProjectTimeline.css';
 import timeline from './img/timeline.png';
 import chipmunk from './img/chipmunk.png';
 import nut from './img/nut.png';
+// Firebase imports
+import { db } from './firebase-config'; // Adjust the path as necessary
+import { collection, addDoc, getDocs } from 'firebase/firestore';
 
 function AutoProjectTimeLine() {
   const [showForm, setShowForm] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [project, setProject] = useState({ title: '', content: '', URL: '', date: '' });
   const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -18,12 +25,27 @@ function AutoProjectTimeLine() {
     }));
   };
 
-  const submitNote = (event) => {
+  const submitNote = async (event) => {
     event.preventDefault();
     const newProject = {...project, visible: Math.random() < 0.5};
-    setProjects([...projects, newProject]);
-    setProject({ title: '', content: '', URL: '', date: '' });
+    try {
+      const docRef = await addDoc(collection(db, "projects"), newProject);
+      console.log("Document written with ID: ", docRef.id);
+      fetchProjects(); // Refresh projects after adding
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+    setProject({ title: '', content: '', URL: '', date: '' }); // Reset form
     setShowForm(false);
+  };
+
+  const fetchProjects = async () => {
+    const querySnapshot = await getDocs(collection(db, "projects"));
+    const items = [];
+    querySnapshot.forEach((doc) => {
+      items.push({ ...doc.data(), id: doc.id });
+    });
+    setProjects(items);
   };
 
   const handleClick = () => {
@@ -61,21 +83,22 @@ function AutoProjectTimeLine() {
         </div>
       )}
       {projects.map((project, index) => (
-        <div key={index} className="project-timeline">
+        <div key={project.id} className="project-timeline">
           <div className="timeline-vertical"></div>
           <div className={index % 2 === 0 ? "timeline-horizontal-left" : "timeline-horizontal-right"}>
-          {index % 2 === 0 ? (
-            <>
-              <span className="project-date-left">{project.date}</span>
-              <img src={chipmunk} alt="Chipmunk" style={{ position: 'absolute', right: '50%', top: '50%', transform: 'translateY(-50%) translateY(-10px)', width: '40px', height: '40px', visibility: project.visible ? 'visible' : 'hidden' }} />
-            </>
-          ) : (
-            <>
-              <img src={nut} alt="Nut" style={{ position: 'absolute', left: '50%', top: '-20%', transform: 'translateY(-50%) translateY(-10px)', width: '20px', height: '20px', visibility: project.visible ? 'visible' : 'hidden' }} />
-              <span className="project-date-right">{project.date}</span>
-            </>
-          )}
-            <span>{project.title}: {project.content} - {project.URL}</span>
+            {index % 2 === 0 ? (
+              <>
+                <span className="project-date-left">{project.date}</span>
+                <img src={chipmunk} alt="Chipmunk" style={{ position: 'absolute', right: '50%', top: '50%', transform: 'translateY(-50%) translateY(-10px)', width: '40px', height: '40px', visibility: project.visible ? 'visible' : 'hidden' }} />
+              </>
+            ) : (
+              <>
+                <img src={nut} alt="Nut" style={{ position: 'absolute', left: '50%', top: '-20%', transform: 'translateY(-50%) translateY(-10px)', width: '20px', height: '20px', visibility: project.visible ? 'visible' : 'hidden' }} />
+                <span className="project-date-right">{project.date}</span>
+              </>
+            )}
+            <span>{project.title}: {project.content} </span>
+            <a href={project.URL} target="_blank" rel="noopener noreferrer" className="about-project-button">About Project</a>
           </div>
         </div>
       ))}

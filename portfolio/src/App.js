@@ -14,9 +14,6 @@ import HomeCircle from './img/Main-Page-Circle.png';
 import HomeCoffee from './img/coffee.png';
 import TimelineCoffee from './img/Timeline-Coffee.jpg';
 import ResearchClock from './img/clockimg.png';
-import ExtracurrImg from './img/extracurr img.png';
-import ExtracurrCoffee from './img/extracurr-coffee.png';
-import powerpoint from './img/example.pdf';
 
 export default class SimpleSlider extends Component {
   constructor(props) {
@@ -113,25 +110,6 @@ export default class SimpleSlider extends Component {
                   <CommandPrompt />
               </div>
               </div>
-              <div className='ExtraCurrSlide' style={{ display: 'flex', alignItems: 'center' }}>
-              <div>
-                <h3><span>{"C:\\Users\\Justine Tran\\Extracurricular>"}</span></h3>
-                <div className='ExtracurrCoffee'>
-                  <img src={ExtracurrCoffee} alt="ExtracurrCoffee"/>
-                </div>
-                <div className='ExtracurrImg'>
-                  <img src={ExtracurrImg} alt="ExtracurrImg"/>
-                </div>
-              </div>
-              <div style={{ marginLeft: '30%', position: 'relative' }}>
-              <iframe
-                src={powerpoint}
-                className="iframePresentation"
-                title="Extracurricular Activities Presentation"
-              ></iframe>
-              <div className="iframeOverlay"></div>
-              </div>
-            </div>
           </Slider>
           <div style={{ textAlign: "center" }}>
           <div className='arrowButton'>

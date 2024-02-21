@@ -184,3 +184,24 @@ form button {
  .project-timeline{
    color: #966262;
  }
+
+ .about-project-button {
+  background-color: #C5A495;
+  color: black;
+  border: none;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+ }
+
+ @media (max-width: 768px) {
+  .about-project-button {
+    padding: 5px;
+    margin: 10px 6px;
+  }
+}
