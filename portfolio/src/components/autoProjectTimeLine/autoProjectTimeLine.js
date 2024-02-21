@@ -10,7 +10,7 @@ import { collection, addDoc, getDocs } from 'firebase/firestore';
 function AutoProjectTimeLine() {
   const [showForm, setShowForm] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const [project, setProject] = useState({ title: '', content: '', URL: '', startDate: '', endDate: '' });
+  const [project, setProject] = useState({ title: '', content: '', URL: '', startDate: '', endDate: '', languages: '' });
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -27,7 +27,8 @@ function AutoProjectTimeLine() {
 
   const submitNote = async (event) => {
     event.preventDefault();
-    const newProject = {...project, visible: Math.random() < 0.5};
+    const languagesArray = project.languages.split(',').map(lang => lang.trim());
+    const newProject = {...project, languages: languagesArray, visible: Math.random() < 0.5};
     try {
       const docRef = await addDoc(collection(db, "projects"), newProject);
       console.log("Document written with ID: ", docRef.id);
@@ -75,9 +76,10 @@ function AutoProjectTimeLine() {
           <div className="form-container">
             <form onSubmit={submitNote}>
               <input name="title" onChange={handleChange} value={project.title} placeholder="Project Title" />
-              <input name="startDate" type="date" onChange={handleChange} value={project.startDate} placeholder="Start Date"/>
-              <input name="endDate" type="date" onChange={handleChange} value={project.endDate} placeholder="End Date"/>
+              <input name="startDate" onChange={handleChange} value={project.startDate} placeholder="Start Date"/>
+              <input name="endDate" onChange={handleChange} value={project.endDate} placeholder="End Date"/>
               <textarea name="content" onChange={handleChange} value={project.content} placeholder="Describe Your Project Here (max 500 characters)" rows="3" maxLength="500"/>
+              <textarea name="languages" onChange={handleChange} value={project.languages} placeholder="Programming Languages (separated by commas)" rows="1" />
               <textarea name="URL" onChange={handleChange} value={project.URL} placeholder="Paste Project URL Here" rows="1" />
               <button type="submit">Add Project</button>
             </form>
@@ -100,6 +102,13 @@ function AutoProjectTimeLine() {
               </>
             )}
             <span>{project.title}: <div style={{ color: '#966262', marginTop: '5px' }}> {project.content} </div></span>
+            <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '10px' }}>
+              {project.languages.map((language, langIndex) => (
+                <div key={langIndex} style={{ backgroundColor: '#C5A495', color: 'black', borderRadius: '10%', padding: '5px 10px', margin: '5px', fontSize: '12px' }}>
+                  {language}
+                </div>
+              ))}
+            </div>
             <a href={project.URL} target="_blank" rel="noopener noreferrer" className="about-project-button">About Project</a>
           </div>
         </div>
