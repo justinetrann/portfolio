@@ -184,28 +184,38 @@ form button {
   }
 }
 
-.timeline-horizontal-left .project-date-left, .timeline-horizontal-right .project-date-right {
+.timeline-horizontal-left .project-date-left {
   font-size: small;
    position: absolute;
-   top: -22px;
+   top: -50px;
    transform: translateY(-100%);
    white-space: nowrap;
    padding: 2px 6px;
    border-radius: 5px;
  }
  
+ .timeline-horizontal-right .project-date-right{
+   font-size: small;
+   position: absolute;
+   top: -30px;
+   transform: translateY(-100%);
+   white-space: nowrap;
+   padding: 2px 6px;
+   border-radius: 5px;
+ }
+
  .timeline-horizontal-left .project-date-left {
-   right: -80%;
+  right: 10px;
  }
  
  @media (max-width: 768px) {
   .timeline-horizontal-left .project-date-left {
-    right: -130%;
+    right: -10%;
   }
 }
 
  .timeline-horizontal-right .project-date-right {
-   left: 10px;
+   left: 100%;
  }
 
  .project-date-left, .project-date-right {
